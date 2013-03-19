@@ -21,7 +21,7 @@ public class Grenades {
 		if (WallDropper.time > 0)
 		{
 			Player player = (Player) proj.getShooter();
-			player.sendMessage(ChatColor.RED + "Your grenade did not go off, the walls are still up.");
+			player.sendMessage("§6[§a§lWalls§6]§R " + ChatColor.RED + "Your grenade did not go off, the walls are still up.");
 		}
 		else if (e.getEntity().getMetadata("grenade-type").get(0).asString().equals("basic"))
 		{

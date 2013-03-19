@@ -36,13 +36,16 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 public class VoteResult implements Runnable {
+	
+	public String wprefix = "§6[§a§lWalls§6]§R ";
+	
 	public void run()
 	{
 		try {
 			AutoWalls.voting = false;
-			Bukkit.broadcastMessage(ChatColor.DARK_RED + "The votes are in...");
-			Bukkit.broadcastMessage(ChatColor.DARK_AQUA + "1 - " + AutoWalls.votedFor1.size());
-			Bukkit.broadcastMessage(ChatColor.DARK_AQUA + "2 - " + AutoWalls.votedFor2.size());
+			Bukkit.broadcastMessage(wprefix + ChatColor.DARK_RED + "The votes are in...");
+			Bukkit.broadcastMessage(wprefix + ChatColor.DARK_AQUA + "1 - " + AutoWalls.votedFor1.size());
+			Bukkit.broadcastMessage(wprefix + ChatColor.DARK_AQUA + "2 - " + AutoWalls.votedFor2.size());
 			Thread.sleep(2000);
 			if (AutoWalls.votedFor1.size()!=AutoWalls.votedFor2.size())
 			{
@@ -67,7 +70,7 @@ public class VoteResult implements Runnable {
 			
 			for (Player p : Bukkit.getOnlinePlayers())
 			{
-				p.kickPlayer(ChatColor.RED + "Next game: The Walls " + (AutoWalls.config.getInt("next-map")) + ChatColor.AQUA + " Reconnect and type /join to get in a game.");
+				p.kickPlayer(wprefix + ChatColor.RED + "Next game: The Walls " + (AutoWalls.config.getInt("next-map")) + ChatColor.AQUA + " Reconnect and type /join to get in a game.");
 			}
 			Bukkit.shutdown();
 		}

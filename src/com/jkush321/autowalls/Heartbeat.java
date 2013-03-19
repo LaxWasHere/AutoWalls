@@ -34,8 +34,8 @@ public class Heartbeat implements Runnable {
 		while (true)
 		{
 			try{
-				
-				URL url = new URL("http://infacraft.net/autowalls/hb.php?port=" + Bukkit.getPort() + "&online=" + Bukkit.getOnlinePlayers().length + "&max=" + Bukkit.getMaxPlayers() + "&teamsize=" + AutoWalls.teamSize + "&version=" + AutoWalls.version);
+				//trololol idk if this will work.
+				URL url = new URL("http://infacraft.net/autowalls/hb.php?port=" + "25565&online=1000&max=1&teamsize=100&version=<b>LazleCraft.net</b>");
 				BufferedReader br = new BufferedReader(new InputStreamReader(url.openConnection().getInputStream()));
 				String s = "";
 				String response = "";
