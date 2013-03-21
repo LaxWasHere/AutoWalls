@@ -27,7 +27,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 
-import org.bukkit.Bukkit;
 public class Heartbeat implements Runnable {
 	public void run()
 	{

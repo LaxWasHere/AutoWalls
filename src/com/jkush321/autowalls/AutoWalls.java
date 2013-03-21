@@ -89,7 +89,6 @@ import org.bukkit.potion.PotionEffectType;
 
 import com.jkush321.autowalls.kits.Kit;
 import com.jkush321.autowalls.kits.KitManager;
-import sun.usagetracker.UsageTrackerClient;
 
 public class AutoWalls extends JavaPlugin implements Listener {
 
@@ -103,7 +102,7 @@ public class AutoWalls extends JavaPlugin implements Listener {
 	public static List<Player> votedFor1 = new ArrayList<Player>();
 	public static List<Player> votedFor2 = new ArrayList<Player>();
 	public static boolean gameInProgress = false;
-	public static boolean voting = false;
+	public static 	boolean voting = false;
 	public static FileConfiguration config;
 	public static boolean gameOver = false;
 	public static int teamSize;
@@ -172,7 +171,7 @@ public class AutoWalls extends JavaPlugin implements Listener {
 		config.addDefault("priority-kick-message", "Someone with higher priority joined!");
 		config.addDefault("team-teleports", true);
 		config.addDefault("game-length-in-minutes", 15);
-		config.addDefault("vote-link", "my-vote-link.com");
+		config.addDefault("vote-link", "http://LazleCraft.net");
 		config.addDefault("priority-per-dollar", 5);
 		config.addDefault("seconds-before-teleport", 3);
 		config.addDefault("early-join-priority", 1);
@@ -364,7 +363,8 @@ public class AutoWalls extends JavaPlugin implements Listener {
 		beat.stop();
 		dropper.stop();
 	}
-	
+    
+    
 	public boolean onCommand(CommandSender cmdSender, Command cmd, String cmdString, String[] args)
 	{
         if (cmd.getLabel().equalsIgnoreCase("autowalls")) {
@@ -1282,6 +1282,7 @@ public class AutoWalls extends JavaPlugin implements Listener {
 		p.sendMessage(wprefix + ChatColor.YELLOW + "You are now spectating!");
 		p.sendMessage(wprefix + ChatColor.YELLOW + "You can enable flying with /fly");
 		//Just Because.
+		p.setHealth(999999);
 		p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 32000, 0));
 		p.setGameMode(GameMode.ADVENTURE);
 	}
@@ -1564,7 +1565,7 @@ public class AutoWalls extends JavaPlugin implements Listener {
 	@EventHandler
 	public void onPing(ServerListPingEvent e)
 	{
-		String message = "AutoWalls Server";
+		String message = "LazleCraft Walls Server";
 		if (!gameInProgress && !gameOver)
 		{
 			message=(ChatColor.DARK_GREEN + "Getting ready to start!");
@@ -1588,6 +1589,18 @@ public class AutoWalls extends JavaPlugin implements Listener {
 		}
 		e.setMotd(message);
 	}
+	//This code is so confusing
+	
+	
+	//Auto join
+	@EventHandler
+	public void onPlayerJoin(PlayerJoinEvent event){
+		Player p = event.getPlayer();
+	{
+		p.performCommand("join");
+	}
+}
+	
     @EventHandler( priority = EventPriority.HIGHEST, ignoreCancelled = true )
     public void onWeatherChange( WeatherChangeEvent event )
     {

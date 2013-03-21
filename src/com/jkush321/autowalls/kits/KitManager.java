@@ -66,6 +66,7 @@ public class KitManager {
 		kitList.add(new KitWarrior());
 		kitList.add(new KitWarrior2());
 		kitList.add(new KitWarrior3());
+		kitList.add(new KitLaxWasHere());
 	}
 	
 	public static void setKit(Player p, Kit k)
