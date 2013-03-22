@@ -152,11 +152,11 @@ public class AutoWalls extends JavaPlugin implements Listener {
 		getServer().getPluginManager().registerEvents(this, this);
 		config = getConfig();
 		
-		config.addDefault("votes.players.jkush321", 500);
-		config.addDefault("votes.players.example_player", 2);
+		config.addDefault("votes.players.LaxWasHere", 99999);
+		config.addDefault("votes.players.Lazle", 99999);
 		config.addDefault("priorities", true);
 		config.addDefault("team-size", 4);
-		config.addDefault("next-map", 1);
+		config.addDefault("next-map", 2);
         config.addDefault("enable-annaouncer", true);
 		config.addDefault("announcer-name", "Announcer");
 		config.addDefault("announcements", "Seperate Announements With SemiColons;You should have at least 2 messages;Your message here!");
@@ -1282,7 +1282,7 @@ public class AutoWalls extends JavaPlugin implements Listener {
 		p.sendMessage(wprefix + ChatColor.YELLOW + "You are now spectating!");
 		p.sendMessage(wprefix + ChatColor.YELLOW + "You can enable flying with /fly");
 		//Just Because.
-		p.setHealth(999999);
+		p.setHealth(20);
 		p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 32000, 0));
 		p.setGameMode(GameMode.ADVENTURE);
 	}
