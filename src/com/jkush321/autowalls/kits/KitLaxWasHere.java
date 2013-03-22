@@ -18,8 +18,8 @@ ItemStack[] contents = new ItemStack[]{ new ItemStack(Material.DIAMOND_SWORD, 1)
 		potion.setSplash(true);
 		potion.setHasExtendedDuration(true);
 		ItemStack bow = new ItemStack(Material.BOW);
-		bow.addEnchantment(Enchantment.ARROW_DAMAGE, 10);
-		bow.addEnchantment(Enchantment.ARROW_FIRE, 5);
+		bow.addUnsafeEnchantment(Enchantment.ARROW_DAMAGE, 10);
+		bow.addUnsafeEnchantment(Enchantment.ARROW_FIRE, 5);
 		bow.addEnchantment(Enchantment.ARROW_INFINITE, 1);
 		
 		contents = new ItemStack[]{ new ItemStack(Material.DIAMOND_SWORD, 1), new ItemStack(Material.COOKED_BEEF, 64), new ItemStack(Material.DIAMOND_HELMET), new ItemStack(Material.DIAMOND_CHESTPLATE, 1), new ItemStack(Material.DIAMOND_LEGGINGS, 1), new ItemStack(Material.DIAMOND_BOOTS, 1), bow, new ItemStack(Material.ARROW, 1) };
